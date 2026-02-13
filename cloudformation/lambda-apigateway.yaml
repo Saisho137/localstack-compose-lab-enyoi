@@ -89,6 +89,6 @@ Outputs:
   oLambdaFunctionArn:
     Value: !GetAtt rHealthcheckFunction.Arn
   oApiGatewayUrl:
-    Value: !Sub https://${rArkaApi}.execute-api.localhost.localstack.cloud/dev/health
+    Value: !Sub https://${rArkaApi}.execute-api.localhost.localstack.cloud:4566/dev/health
   oLocalStackUrl:
     Value: !Sub http://localhost:4566/restapis/${rArkaApi}/dev/_user_request_/health

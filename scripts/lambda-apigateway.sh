@@ -18,7 +18,10 @@ export AWS_DEFAULT_REGION="us-east-1"
 aws cloudformation deploy \
   --template-file cloudformation/lambda-apigateway.yaml \
   --stack-name lambda-apigateway-stack \
+  --capabilities CAPABILITY_NAMED_IAM \
   --endpoint-url=http://localhost:4566
 
 # curl a Rest API Gateway endpoint:
-curl -X GET http://hnazag7ljs.execute-api.localhost.localstack.cloud:4566/dev/health
+# El ID de la URL va cambiando, se puede conseguir en:
+# https://app.localstack.cloud/inst/default/resources/cloudformation/stacks/lambda-apigateway-stack/outputs
+curl -X GET https://xe6mm0swon.execute-api.localhost.localstack.cloud:4566/dev/health
