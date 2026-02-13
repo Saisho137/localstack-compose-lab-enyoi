@@ -13,3 +13,10 @@ aws cloudformation deploy \
   --template-file cloudformation/secrets-manager.yaml \
   --stack-name secrets-stack \
   --endpoint-url=http://localhost:4566
+
+# Listar los secretos creados:
+aws secretsmanager list-secrets --endpoint-url=http://localhost:4566
+# Listar secretos cifrados
+aws secretsmanager get-secret-value \
+  --secret-id arka/api/keys \
+  --endpoint-url=http://localhost:4566
